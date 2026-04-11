@@ -3,14 +3,6 @@
 @{
     ViewData["Title"] = "Inicio";
     Layout = null;
-
-    var username = Context.Session.GetString("Username");
-    var email = Context.Session.GetString("Email");
-
-    if (username == null)
-    {
-        
-    }
 }
 <!DOCTYPE html>
 <html lang="es">
@@ -25,8 +17,16 @@
         <div class="home-card">
             <div class="home-icon">&#9989;</div>
             <h1>¡Bienvenido!</h1>
-            <p class="user-info">Has iniciado sesión como <strong>@username</strong></p>
-            <p class="user-email">@email</p>
+
+            @if (Model.RegistroExitoso)
+            {
+                <div class="alert-success alert-success-banner">
+                    &#10004;&#65039; ¡Registro exitoso!!!
+                </div>
+            }
+
+            <p class="user-info">Has iniciado sesión como <strong>@Model.Username</strong></p>
+            <p class="user-email">@Model.Email</p>
             <a href="/Account/Logout" class="btn-logout">Cerrar sesión</a>
         </div>
     </div>

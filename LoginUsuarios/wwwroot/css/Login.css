@@ -13,13 +13,14 @@ body {
     justify-content: center;
 }
 
-/* Login */
+/* ─── LOGIN / REGISTER ──────────────────────────────── */
 .login-wrapper {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    padding: 2rem 1rem;
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
 }
 
@@ -32,6 +33,7 @@ body {
     box-shadow: 0 20px 60px rgba(0,0,0,0.3);
 }
 
+/* ─── HEADER ────────────────────────────────────────────────── */
 .login-header {
     text-align: center;
     margin-bottom: 2rem;
@@ -54,6 +56,7 @@ body {
     font-size: 0.9rem;
 }
 
+/* ─── ALERTAS ───────────────────────────────────────────────── */
 .alert-error {
     background: #fef2f2;
     border: 1px solid #fecaca;
@@ -64,6 +67,39 @@ body {
     margin-bottom: 1.2rem;
 }
 
+.alert-success {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #16a34a;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    margin-bottom: 1.2rem;
+}
+
+/* Banner de registro exitoso en el Index */
+.alert-success-banner {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.9rem 1.2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    animation: fadeInDown 0.4s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ─── FORMULARIO ────────────────────────────────────────────── */
 .form-group {
     margin-bottom: 1.2rem;
 }
@@ -114,6 +150,7 @@ body {
     line-height: 1;
 }
 
+/* ─── BOTONES ───────────────────────────────────────────────── */
 .btn-login {
     width: 100%;
     padding: 0.85rem;
@@ -136,7 +173,25 @@ body {
         transform: scale(0.98);
     }
 
-/* Home*/
+/* ─── ENLACE REGISTRO / LOGIN ───────────────────────────────── */
+.register-link {
+    text-align: center;
+    margin-top: 1.4rem;
+    font-size: 0.88rem;
+    color: #6b7280;
+}
+
+    .register-link a {
+        color: #0f3460;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+/* ─── HOME ──────────────────────────────────────────────────── */
 .home-wrapper {
     width: 100%;
     display: flex;

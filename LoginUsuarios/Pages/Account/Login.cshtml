@@ -30,21 +30,20 @@
 
             <form method="post">
                 <div class="form-group">
-                    <label for="username">Usuario</label>
-                    <input type="text"
-                           asp-for="Username"
+                    <label asp-for="Username">Usuario</label>
+                    <input asp-for="Username"
+                           type="text"
                            placeholder="Ingresa tu usuario"
                            autocomplete="username"
                            required />
                 </div>
 
                 <div class="form-group">
-                    <label for="password">Contraseña</label>
+                    <label asp-for="Password">Contraseña</label>
                     <div class="password-wrapper">
-                        <input type="password"
+                        <input asp-for="Password"
+                               type="password"
                                id="password"
-                               name="password"
-                               asp-for="Password"
                                placeholder="Ingresa tu contraseña"
                                autocomplete="current-password"
                                required />
@@ -54,14 +53,18 @@
 
                 <button type="submit" class="btn-login">Entrar</button>
             </form>
+
+            <div class="register-link">
+                ¿No tienes cuenta? <a href="/Account/Register">Regístrate aquí</a>
+            </div>
         </div>
     </div>
 
     <script>
-        function togglePassword() {
-            const input = document.getElementById('password');
-            input.type = input.type === 'password' ? 'text' : 'password';
-        }
+            function togglePassword() {
+                const input = document.getElementById('password');
+                input.type = input.type === 'password' ? 'text' : 'password';
+            }
     </script>
 </body>
 </html>
