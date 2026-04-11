@@ -18,8 +18,8 @@ namespace LoginUsuarios.Services
         public async Task<Usuario?> ValidarUsuarioAsync(string username, string password)
         {
             string hash = HashPassword(password);
-
-            await _conn.OpenAsync();
+            if (_conn.State != System.Data.ConnectionState.Open)
+                await _conn.OpenAsync();
 
             string sql = @"SELECT id, username, email, activo, fecha_registro, ultimo_acceso
                            FROM usuarios

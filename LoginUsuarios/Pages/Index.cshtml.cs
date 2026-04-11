@@ -5,8 +5,11 @@ namespace LoginUsuarios.Pages
 {
     public class IndexModel : PageModel
     {
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            if (HttpContext.Session.GetString("Username") == null)
+                return RedirectToPage("/Account/Login");
+            return Page();
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace LoginUsuarios.Services
 {
-    public class IAuthService
+    public interface IAuthService
     {
         Task<Usuario?> ValidarUsuarioAsync(string username, string password);
     }
