@@ -6,6 +6,7 @@ namespace LoginUsuarios.Services
     {
         Task<Usuario?> ValidarUsuarioAsync(string username, string password);
         Task<RegistroResultado> RegistrarUsuarioAsync(string nombre, string username, string email, string password);
+        Task<bool> CambiarPasswordAsync(int userId, string passwordActual, string passwordNueva);
     }
 
     // Clase resultado del registro

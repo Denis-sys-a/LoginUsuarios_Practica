@@ -1,5 +1,6 @@
 ﻿namespace LoginUsuarios.Models
 {
+    // Modelo que representa un usuario de la base de datos
     public class Usuario
     {
         public int Id { get; set; }

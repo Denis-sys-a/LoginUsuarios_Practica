@@ -36,6 +36,8 @@
             }
 
             <form method="post">
+
+                @* asp-for vincula cada input con su propiedad en el PageModel *@
                 <div class="form-group">
                     <label asp-for="Nombre">Nombre completo</label>
                     <input asp-for="Nombre"
@@ -56,6 +58,7 @@
 
                 <div class="form-group">
                     <label asp-for="Email">Correo electrónico</label>
+                    @* type="email" para validar el formato del correo en el navegador *@
                     <input asp-for="Email"
                            type="email"
                            placeholder="ejemplo@correo.com"
@@ -66,6 +69,7 @@
                 <div class="form-group">
                     <label asp-for="Password">Contraseña</label>
                     <div class="password-wrapper">
+                        @* autocomplete="new-password" es para evitar que el navegador sugiera contraseñas guardadas *@
                         <input asp-for="Password"
                                type="password"
                                id="password"
@@ -92,6 +96,7 @@
                 <button type="submit" class="btn-login">Registrarme</button>
             </form>
 
+            @* Enlace para ir al Login si el usuario ya tiene su cuenta *@
             <div class="register-link">
                 ¿Ya tienes cuenta? <a href="/Account/Login">Inicia sesión</a>
             </div>

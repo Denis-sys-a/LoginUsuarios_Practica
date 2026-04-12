@@ -46,5 +46,6 @@ VALUES (
     'admin@test.com'
 );
 
-select * from usuarios;
+--Agregar la columna "nombre" a la tabla usuarios
+ALTER TABLE usuarios ADD COLUMN nombre VARCHAR(100) NOT NULL DEFAULT '' AFTER id;
 */

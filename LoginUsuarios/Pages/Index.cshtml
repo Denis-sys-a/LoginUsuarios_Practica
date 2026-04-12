@@ -16,18 +16,24 @@
     <div class="home-wrapper">
         <div class="home-card">
             <div class="home-icon">&#9989;</div>
-            <h1>¡Bienvenido!</h1>
+            <h1>Bienvenido!</h1>
 
             @if (Model.RegistroExitoso)
             {
                 <div class="alert-success alert-success-banner">
-                    &#10004;&#65039; ¡Registro exitoso!!!
+                    &#10004; Registro exitoso!!!
                 </div>
             }
 
-            <p class="user-info">Has iniciado sesión como <strong>@Model.Username</strong></p>
+            @* Muestra el username y email leídos desde la sesión activa *@
+            <p class="user-info">Has iniciado sesion como <strong>@Model.Username</strong></p>
             <p class="user-email">@Model.Email</p>
-            <a href="/Account/Logout" class="btn-logout">Cerrar sesión</a>
+
+            @* Redirige a la pagina de cambio de contrasena *@
+            <a href="/Account/ChangePassword" class="btn-change-pass">&#128272; Cambiar contrasena</a>
+
+            @* Limpia la sesion y redirige al Login *@
+            <a href="/Account/Logout" class="btn-logout">Cerrar sesion</a>
         </div>
     </div>
 </body>

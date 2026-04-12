@@ -7,26 +7,14 @@ namespace LoginUsuarios.Pages.Account
     public class LoginModel : PageModel
     {
         private readonly IAuthService _authService;
+        public LoginModel(IAuthService authService) { _authService = authService; }
 
-        public LoginModel(IAuthService authService)
-        {
-            _authService = authService;
-        }
-
-        [BindProperty]
-        public string Username { get; set; } = string.Empty;
-
-        [BindProperty]
-        public string Password { get; set; } = string.Empty;
-
+        [BindProperty] public string Username { get; set; } = string.Empty;
+        [BindProperty] public string Password { get; set; } = string.Empty;
         public string? ErrorMessage { get; set; }
 
         public IActionResult OnGet()
         {
-           
-            if (HttpContext.Session.GetString("Username") != null)
-                return RedirectToPage("/Index");
-
             return Page();
         }
 
@@ -46,11 +34,9 @@ namespace LoginUsuarios.Pages.Account
                 return Page();
             }
 
-            
             HttpContext.Session.SetInt32("UserId", usuario.Id);
             HttpContext.Session.SetString("Username", usuario.Username);
             HttpContext.Session.SetString("Email", usuario.Email);
-
             return RedirectToPage("/Index");
         }
     }
